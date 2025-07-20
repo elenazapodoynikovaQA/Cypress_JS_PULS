@@ -6,18 +6,6 @@
 ## Тесты Cypress PULSJava Script
 Автоматизированные UI-тесты для проверок регистрации и авторизации на платформе PULS .
 
-## Структура проекта
-puls-cypress-tests/
-├── cypress/
-│   ├── e2e/
-│   │   ├── registration.cy.js    # Тесты регистрации и авторизации
-│   ├── fixtures/
-│   ├── support/
-│       └── commands.js           # (опционально) кастомные команды
-├── cypress.config.js
-├── package.json
-└── README.md
-
 Фреймворк : Cypress 12.7.0
 Язык : JavaScript
 Тип испытаний : пользовательский интерфейс (E2E)
