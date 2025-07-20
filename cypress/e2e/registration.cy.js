@@ -1,14 +1,14 @@
 // 1. ТЕСТ Успешная регистрация нового пользователя через СМС
 describe('Регистрация и авторизация', () => {
-  const testPhone = '79661278201';
-  const testEmail = 'zedw32485045@mail.ru';
-  const testPassword = 'ZAp8745623!';
-  const testName = 'Иван';
-  const testSurname = 'Иванов';
-  const testBirthday = '01.01.2000';
-  const testCountry = 'Россия';
-  const testCity = 'Москва';
-  const testSms = '54321'; // если нет реальной интеграции
+  const testPhone = 'Phone';
+  const testEmail = 'Email';
+  const testPassword = 'Password';
+  const testName = 'Name';
+  const testSurname = 'Surname';
+  const testBirthday = 'data';
+  const testCountry = 'Country';
+  const testCity = 'City';
+  const testSms = 'code'; // если нет реальной интеграции
 
   it('Успешная регистрация нового пользователя', () => {
     cy.visit('https://upjet.dev.sandakov.space/auth/sign-in');
@@ -98,8 +98,8 @@ describe('Регистрация и авторизация', () => {
   // 4 ТЕСТ Авторизация с некорректным паролем/номером
   it('Ошибка при авторизации с некорректным логином или паролем', () => {
     cy.visit('https://upjet.dev.sandakov.space/auth/sign-in');
-    cy.get('input.Input_Input__7YFaq').eq(0).type('798771657044');
-    cy.get('input.Input_Input__7YFaq').eq(1).type('WRONG4365pa3sswo0rd21!');
+    cy.get('input.Input_Input__7YFaq').eq(0).type('Phone');
+    cy.get('input.Input_Input__7YFaq').eq(1).type('Password');
     cy.contains('Войти в личный кабинет').click();
 
     cy.contains('Неверный логин или пароль').should('be.visible');
